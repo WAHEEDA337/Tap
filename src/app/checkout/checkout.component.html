@@ -1,0 +1,35 @@
+<div *ngIf="this.tapSrv.isLoading" class="container d-flex justify-content-center align-items-center">
+    <div class="lds-dual-ring d-flex justify-content-center text-center" ></div>
+</div>
+<div class="padding" *ngIf="!this.tapSrv.isLoading">
+    <div class="row">
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="col-sm-8 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-6"> <span>CREDIT/DEBIT CARD PAYMENT</span> </div>
+                            <div class="col-md-6 text-right" style="margin-top: -5px;"> <img src="https://img.icons8.com/color/36/000000/visa.png"> <img src="https://img.icons8.com/color/36/000000/mastercard.png"> <img src="https://img.icons8.com/color/36/000000/amex.png"> </div>
+                        </div>
+                    </div>
+                    <div class="card-body" style="height: 350px">
+                        <div class="form-group"> <label for="cc-number" class="control-label">CARD NUMBER</label> <input id="cc-number" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required [(ngModel)]="this.tapSrv.cardNumber"> </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group"> <label for="cc-exp" class="control-label">MONTH</label> <input id="cc-exp" type="tel" class="input-lg form-control cc-exp" autocomplete="cc-exp" placeholder="MM" required [(ngModel)]="this.tapSrv.month"> </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group"> <label for="cc-exp" class="control-label">YEAR</label> <input id="cc-exp" type="tel" class="input-lg form-control cc-exp" autocomplete="cc-exp" placeholder="YY" required [(ngModel)]="this.tapSrv.year"> </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group"> <label for="cc-cvc" class="control-label">CARD CVC</label> <input id="cc-cvc" type="tel" class="input-lg form-control cc-cvc" autocomplete="off" placeholder="••••" required [(ngModel)]="this.tapSrv.cvv"> </div>
+                            </div>
+                        </div>
+                        <div class="form-group"> <label for="numeric" class="control-label">CARD HOLDER NAME</label> <input type="text" class="input-lg form-control" [(ngModel)]="this.tapSrv.name"> </div>
+                        <div class="form-group"> <input value="MAKE PAYMENT" type="button" class="btn btn-success btn-lg form-control" style="font-size: .8rem;" (click)="this.charge()"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
